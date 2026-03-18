@@ -1,0 +1,71 @@
+# Gradle files
+.gradle/
+build/
+**/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Android Studio
+captures/
+.externalNativeBuild
+.cxx
+
+# macOS
+.DS_Store
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Keystore files
+*.jks
+*.keystore
+!keystore.properties
+
+# Google Services
+google-services.json
+
+# Fabric
+crashlytics-build.properties
+
+# Log files
+*.log
+
+# APK files (optional - uncomment if you don't want to track APKs)
+*.apk
+*.aab
+
+# ProGuard
+proguard/
+
+# NDK
+obj/
+
+# Generated files
+apt/
+gen/
+out/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Coverage
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Node modules (if using any JS tools)
+node_modules/
