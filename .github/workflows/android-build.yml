@@ -1,0 +1,192 @@
+name: Android APK Build
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
+  BUILD_TOOLS_VERSION: "34.0.0"
+  JDK_VERSION: "21"
+
+jobs:
+  build-apk:
+    name: Build Release APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: ⬇️ Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+
+    - name: 📊 Set Current Date As Env Variable
+      run: echo "BUILD_DATE=$(date +'%Y-%m-%d_%H-%M')" >> $GITHUB_ENV
+
+    - name: 🐦 Set Up JDK ${{ env.JDK_VERSION }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ env.JDK_VERSION }}
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: 📦 Setup Gradle
+      uses: gradle/gradle-build-action@v3
+      with:
+        gradle-version: 8.2
+
+    - name: 📝 Grant Execute Permission For Gradlew
+      run: chmod +x gradlew
+
+    - name: 🏗️ Build Debug APK (Fast)
+      id: build_apk
+      run: |
+        echo "🚀 Starting APK build..."
+        echo "Build started at: $(date)"
+        ./gradlew assembleDebug --no-daemon --stacktrace --info
+        echo "Build completed at: $(date)"
+      continue-on-error: true
+
+    - name: ❌ Build Failed - Send Email Notification
+      if: steps.build_apk.outcome == 'failure'
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "❌ BUILD FAILED - Country Simulator (cssim) - ${{ env.BUILD_DATE }}"
+        to: lobinpek2@gmail.com
+        from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
+        body: |
+          <html>
+          <body style="font-family: Arial, sans-serif;">
+            <h2 style="color: #dc3545;">❌ Build Failed Notification</h2>
+            
+            <div style="background-color: #f8d7da; padding: 15px; border-radius: 5px; margin: 15px 0;">
+              <strong>Repository:</strong> ${{ github.repository }}<br>
+              <strong>Branch:</strong> ${{ github.ref }}<br>
+              <strong>Commit:</strong> <a href="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}">{{ github.sha }}</a><br>
+              <strong>Author:</strong> ${{ github.actor }}<br>
+              <strong>Build Date:</strong> ${{ env.BUILD_DATE }}<br>
+              <strong>Workflow:</strong> <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">View Run</a>
+            </div>
+            
+            <h3>Error Details:</h3>
+            <pre style="background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+          ${{ steps.build_apk.outputs.stderr }}
+            </pre>
+            
+            <h3>Next Steps:</h3>
+            <ol>
+              <li>Check the <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">workflow run</a> for detailed logs</li>
+              <li>Review recent commits for potential issues</li>
+              <li>Run build locally to reproduce the error</li>
+            </ol>
+            
+            <hr style="margin: 20px 0;">
+            <p style="color: #666; font-size: 12px;">
+              This is an automated message from GitHub Actions.<br>
+              Country Simulator (cssim) - Android APK Build System
+            </p>
+          </body>
+          </html>
+        priority: high
+
+    - name: ✅ Build Succeeded - Send Email Notification
+      if: steps.build_apk.outcome == 'success'
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "✅ Build Successful - Country Simulator (cssim) - ${{ env.BUILD_DATE }}"
+        to: lobinpek2@gmail.com
+        from: GitHub Actions <${{ secrets.EMAIL_USERNAME }}>
+        body: |
+          <html>
+          <body style="font-family: Arial, sans-serif;">
+            <h2 style="color: #28a745;">✅ Build Successful!</h2>
+            
+            <div style="background-color: #d4edda; padding: 15px; border-radius: 5px; margin: 15px 0;">
+              <strong>Repository:</strong> ${{ github.repository }}<br>
+              <strong>Branch:</strong> ${{ github.ref }}<br>
+              <strong>Commit:</strong> <a href="${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}">{{ github.sha }}</a><br>
+              <strong>Author:</strong> ${{ github.actor }}<br>
+              <strong>Build Date:</strong> ${{ env.BUILD_DATE }}<br>
+              <strong>Build Time:</strong> ~3 minutes
+            </div>
+            
+            <h3>APK Details:</h3>
+            <ul>
+              <li><strong>File:</strong> app-debug.apk</li>
+              <li><strong>Size:</strong> Will be shown in artifacts</li>
+              <li><strong>Min SDK:</strong> Android 7.0 (API 24)</li>
+              <li><strong>Target SDK:</strong> Android 14 (API 34)</li>
+            </ul>
+            
+            <h3>Download:</h3>
+            <p>The APK is available in the <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">workflow artifacts</a> section.</p>
+            
+            <h3>Installation:</h3>
+            <ol>
+              <li>Download the APK from artifacts</li>
+              <li>Enable "Install from Unknown Sources" on your Android device</li>
+              <li>Transfer APK to device</li>
+              <li>Install and enjoy!</li>
+            </ol>
+            
+            <hr style="margin: 20px 0;">
+            <p style="color: #666; font-size: 12px;">
+              This is an automated message from GitHub Actions.<br>
+              Country Simulator (cssim) - Android APK Build System
+            </p>
+          </body>
+          </html>
+        priority: normal
+
+    - name: 📦 Upload APK Artifact
+      if: steps.build_apk.outcome == 'success'
+      uses: actions/upload-artifact@v4
+      with:
+        name: CountrySimulator-Debug-${{ env.BUILD_DATE }}
+        path: |
+          app/build/outputs/apk/debug/*.apk
+        retention-days: 30
+        if-no-files-found: error
+
+    - name: 📊 Upload Build Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-reports-${{ env.BUILD_DATE }}
+        path: |
+          app/build/reports/
+          build/reports/
+        retention-days: 7
+        if-no-files-found: ignore
+
+    - name: 📈 Generate Build Summary
+      if: always()
+      run: |
+        echo "## 📊 Build Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Repository:** ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Branch:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Build Date:** ${{ env.BUILD_DATE }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** ${{ steps.build_apk.outcome == 'success' && '✅ Success' || '❌ Failed' }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
+          APK_SIZE=$(du -h app/build/outputs/apk/debug/app-debug.apk | cut -f1)
+          echo "### 📦 APK Information" >> $GITHUB_STEP_SUMMARY
+          echo "- **File:** app-debug.apk" >> $GITHUB_STEP_SUMMARY
+          echo "- **Size:** $APK_SIZE" >> $GITHUB_STEP_SUMMARY
+          echo "- **Location:** Available in artifacts" >> $GITHUB_STEP_SUMMARY
+        fi
