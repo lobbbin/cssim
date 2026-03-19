@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.country.simulator.ui.screens
 
 import androidx.compose.foundation.layout.*
@@ -195,7 +197,7 @@ fun PriorityBadge(priority: Priority) {
     val (color, label) = when (priority) {
         Priority.URGENT -> Color.Red to "Urgent"
         Priority.HIGH -> Color(0xFFFF9800) to "High"
-        Priority.MEDIUM -> Color(0xFF2196F3) to "Medium"
+        Priority.NORMAL -> Color(0xFF2196F3) to "Normal"
         Priority.LOW -> Color(0xFF4CAF50) to "Low"
     }
     
