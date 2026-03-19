@@ -78,8 +78,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000,
             effects = """{"approvalRating": 5, "happiness": 3}"""
         ))
@@ -92,8 +96,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000
         ))
         
@@ -105,8 +113,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000,
             effects = """{"promisesMade": 3}"""
         ))
@@ -129,8 +141,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000
         ))
         
@@ -142,8 +158,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 14 * 24 * 60 * 60 * 1000
         ))
         
@@ -155,8 +175,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 10 * 24 * 60 * 60 * 1000
         ))
         
@@ -188,8 +212,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000
         ))
         
@@ -201,8 +229,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
         ))
         
@@ -214,8 +246,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000
         ))
         
@@ -227,8 +263,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 14 * 24 * 60 * 60 * 1000
         ))
         
@@ -250,8 +290,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
         ))
         
@@ -263,8 +307,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 14 * 24 * 60 * 60 * 1000
         ))
         
@@ -286,8 +334,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.LAW,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
         ))
         
@@ -299,8 +351,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.LAW,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000
         ))
         
@@ -334,8 +390,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.DEFENSE,
             priority = Priority.URGENT,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
         ))
         
@@ -347,8 +407,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 12 * 60 * 60 * 1000
         ))
         
@@ -360,8 +424,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000
         ))
         
@@ -383,8 +451,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.DIPLOMACY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
         ))
         
@@ -396,8 +468,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.DIPLOMACY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 14 * 24 * 60 * 60 * 1000
         ))
         
@@ -419,8 +495,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
         ))
         
@@ -432,8 +512,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.DIPLOMACY,
             priority = Priority.MEDIUM,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 30 * 24 * 60 * 60 * 1000
         ))
         
@@ -455,8 +539,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.LAW,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
         ))
         
@@ -468,8 +556,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.HIGH,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000
         ))
         
@@ -491,8 +583,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.URGENT,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 6 * 60 * 60 * 1000
         ))
         
@@ -504,8 +600,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.ECONOMY,
             priority = Priority.URGENT,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 12 * 60 * 60 * 1000
         ))
         
@@ -517,8 +617,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.DEFENSE,
             priority = Priority.URGENT,
             relatedMacroId = decision.id,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + 6 * 60 * 60 * 1000
         ))
         
@@ -544,8 +648,12 @@ class ButterflyEffectEngine(private val repository: GameRepository) {
             category = TaskCategory.entries.random(),
             priority = Priority.MEDIUM,
             relatedMacroId = macroId,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
             status = TaskStatus.PENDING,
             createdDate = System.currentTimeMillis(),
+            completedDate = null,
             dueDate = System.currentTimeMillis() + delayDays * 24 * 60 * 60 * 1000,
             butterflyEffects = """{"magnitude": $effectMagnitude, "delay": $delayDays}"""
         )

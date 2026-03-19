@@ -260,7 +260,7 @@ interface DiplomacyDao {
 }
 
 @Dao
-interface NPCDao {
+interface NPCBasicDao {
     @Query("SELECT * FROM npcs WHERE countryId = :countryId AND isActive = 1 LIMIT :limit OFFSET :offset")
     fun getNPCs(countryId: Long, limit: Int, offset: Int): Flow<List<NPC>>
     
