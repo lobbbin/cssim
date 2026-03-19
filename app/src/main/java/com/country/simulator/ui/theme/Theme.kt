@@ -56,3 +56,10 @@ fun CountrySimulatorTheme(
         content = content
     )
 }
+
+// Extension properties for custom colors on ColorScheme
+val ColorScheme.success: Color
+    get() = SuccessGreen
+
+val ColorScheme.warning: Color
+    get() = WarningOrange

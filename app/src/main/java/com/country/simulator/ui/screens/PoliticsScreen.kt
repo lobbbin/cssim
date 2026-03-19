@@ -483,12 +483,3 @@ fun formatCompactNumber(number: Int): String {
         else -> number.toString()
     }
 }
-
-fun formatCurrency(value: Double): String {
-    return when {
-        value >= 1_000_000_000 -> String.format("$%.1fB", value / 1_000_000_000)
-        value >= 1_000_000 -> String.format("$%.1fM", value / 1_000_000)
-        value >= 1_000 -> String.format("$%.1fK", value / 1_000)
-        else -> String.format("$%.0f", value)
-    }
-}

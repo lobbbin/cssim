@@ -108,17 +108,17 @@ fun AppointeeCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                StatWithProgress(
+                StatWithProgressDetailed(
                     label = "Approval",
                     value = appointee.approvalRating.toInt(),
                     color = MaterialTheme.colorScheme.primary
                 )
-                StatWithProgress(
+                StatWithProgressDetailed(
                     label = "Loyalty",
                     value = appointee.loyalty.toInt(),
                     color = MaterialTheme.colorScheme.tertiary
                 )
-                StatWithProgress(
+                StatWithProgressDetailed(
                     label = "Competence",
                     value = appointee.competence.toInt(),
                     color = MaterialTheme.colorScheme.secondary
@@ -239,7 +239,7 @@ fun MinistryCard(
 }
 
 @Composable
-fun StatWithProgress(
+fun StatWithProgressDetailed(
     label: String,
     value: Int,
     color: androidx.compose.ui.graphics.Color
