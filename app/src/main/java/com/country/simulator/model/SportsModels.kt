@@ -22,7 +22,7 @@ data class SportsTeam(
     val fanBase: Int,
     val morale: Double, // 0-100
     val isActive: Boolean = true
-)
+}
 
 enum class SportType {
     FOOTBALL,
@@ -64,7 +64,7 @@ data class Player(
     val isSuspended: Boolean = false,
     val suspensionReason: String? = null,
     val isActive: Boolean = true
-)
+}
 
 @Entity(tableName = "stadiums")
 data class Stadium(
@@ -82,7 +82,7 @@ data class Stadium(
     val revenue: Double,
     val isUnderRenovation: Boolean = false,
     val renovationBudget: Double = 0.0
-)
+}
 
 @Entity(tableName = "stadium_designs")
 data class StadiumDesign(
@@ -99,7 +99,7 @@ data class StadiumDesign(
     val publicSupport: Double, // 0-100
     val status: ProjectStatus,
     val approvalDate: Long?
-)
+}
 
 @Entity(tableName = "sports_events")
 data class SportsEvent(
@@ -119,7 +119,7 @@ data class SportsEvent(
     val bidWon: Boolean = false,
     val bidDate: Long?,
     val infrastructureNeeded: String = "" // JSON array
-)
+}
 
 enum class SportsEventType {
     OLYMPICS,
@@ -158,7 +158,7 @@ data class DopingCase(
     val appeal: Boolean = false,
     val appealDate: Long?,
     val mediaAttention: Int // 1-10
-)
+}
 
 enum class TestType {
     URINE,
@@ -193,7 +193,7 @@ data class StadiumVendor(
     val customerRating: Double, // 0-100
     val healthRating: Double, // 0-100
     val isActive: Boolean = true
-)
+}
 
 enum class VendorType {
     FOOD,
@@ -223,7 +223,7 @@ data class EliteAthlete(
     val nextCompetitionDate: Long?,
     val performanceTrend: Trend,
     val isActive: Boolean = true
-)
+}
 
 enum class Trend {
     IMPROVING,
@@ -246,7 +246,7 @@ data class FitnessPolicy(
     val startDate: Long,
     val endDate: Long?,
     val isActive: Boolean = true
-)
+}
 
 enum class FitnessPolicyType {
     SCHOOL_SPORTS,
@@ -273,7 +273,7 @@ data class SportsSponsor(
     val activationBudget: Double,
     val roi: Double, // return on investment
     val isActive: Boolean = true
-)
+}
 
 enum class EntityType {
     TEAM,

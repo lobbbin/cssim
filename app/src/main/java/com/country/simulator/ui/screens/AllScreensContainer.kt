@@ -20,7 +20,7 @@ import com.country.simulator.viewmodel.GameViewModel
 fun AllScreensContainer(
     viewModel: GameViewModel,
     modifier: Modifier = Modifier
-) {
+} {
     var currentScreen by remember { mutableStateOf<AppScreen>(AppScreen.HOME) }
     
     // Collect all the data flows
@@ -289,7 +289,7 @@ fun NotificationBadge(
     count: Int,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
-) {
+} {
     if (count > 0) {
         FloatingActionButton(
             onClick = onClick,
@@ -332,7 +332,7 @@ fun NotificationBadge(
 fun QuickTaskButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
-) {
+} {
     FloatingActionButton(
         onClick = onClick,
         modifier = modifier

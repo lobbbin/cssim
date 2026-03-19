@@ -25,7 +25,7 @@ data class InfrastructureProject(
     val publicSupport: Double, // 0-100
     val workerCount: Int,
     val safetyIncidents: Int = 0
-)
+}
 
 enum class InfrastructureType {
     POWER_STATION,
@@ -68,7 +68,7 @@ data class PowerGrid(
     val renewablePercentage: Double, // 0-100
     val transmissionLoss: Double, // percentage
     val blackoutRisk: Double // 0-100
-)
+}
 
 @Entity(tableName = "energy_sources")
 data class EnergySource(
@@ -86,7 +86,7 @@ data class EnergySource(
     val maintenanceSchedule: String?, // JSON
     val isActive: Boolean = true,
     val yearBuilt: Int
-)
+}
 
 enum class EnergySourceType {
     COAL,
@@ -116,7 +116,7 @@ data class TransportRoute(
     val tollFee: Double,
     val averageTravelTime: Int, // minutes
     val isActive: Boolean = true
-)
+}
 
 enum class TransportType {
     HIGHWAY,
@@ -142,7 +142,7 @@ data class BusSchedule(
     val averageRidership: Int,
     val fare: Double,
     val isActive: Boolean = true
-)
+}
 
 enum class ScheduleType {
     WEEKDAY,
@@ -166,7 +166,7 @@ data class TrafficProject(
     val businessImpact: Double, // -100 to 100
     val safetyImprovement: Double, // 0-100
     val completionDate: Long?
-)
+}
 
 enum class TrafficProjectType {
     SPEED_BUMP,
@@ -198,7 +198,7 @@ data class ConstructionPermit(
     val approvalDate: Long?,
     val expiryDate: Long?,
     val conditions: String = "" // JSON array
-)
+}
 
 enum class PermitStatus {
     PENDING,
@@ -224,7 +224,7 @@ data class PollutionControl(
     val effectiveness: Double, // 0-100
     val installationDate: Long?,
     val isActive: Boolean = false
-)
+}
 
 enum class PollutionControlType {
     FILTER,

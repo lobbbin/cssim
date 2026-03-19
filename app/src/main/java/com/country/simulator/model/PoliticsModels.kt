@@ -12,7 +12,7 @@ data class Election(
     val completedDate: Long? = null,
     val isActive: Boolean = false,
     val result: ElectionResult? = null
-)
+}
 
 enum class ElectionType {
     PRESIDENTIAL,
@@ -30,13 +30,13 @@ data class ElectionResult(
     val turnoutPercentage: Double,
     val totalVotes: Long,
     val opponents: List<ElectionOpponent>
-)
+}
 
 data class ElectionOpponent(
     val name: String,
     val party: String,
     val votePercentage: Double
-)
+}
 
 @Entity(tableName = "campaigns")
 data class Campaign(
@@ -54,7 +54,7 @@ data class Campaign(
     val pollRating: Double = 0.0,
     val promises: String = "", // JSON array of promises
     val isActive: Boolean = true
-)
+}
 
 @Entity(tableName = "campaign_events")
 data class CampaignEvent(
@@ -67,7 +67,7 @@ data class CampaignEvent(
     val impact: Double, // -100 to 100
     val completed: Boolean = false,
     val scheduledDate: Long
-)
+}
 
 enum class CampaignEventType {
     RALLY,
@@ -97,7 +97,7 @@ data class PoliticalParty(
     val approvalRating: Double = 0.0,
     val isRulingParty: Boolean = false,
     val isOppositionParty: Boolean = false
-)
+}
 
 @Entity(tableName = "scandals")
 data class Scandal(
@@ -113,7 +113,7 @@ data class Scandal(
     val resolutionDate: Long? = null,
     val impactOnApproval: Double = 0.0,
     val responseStrategy: String? = null
-)
+}
 
 enum class ScandalType {
     CORRUPTION,
@@ -137,4 +137,4 @@ data class OpinionPoll(
     val undecidedPercentage: Double,
     val topIssues: String, // JSON array
     val demographicBreakdown: String? = null // JSON object
-)
+}

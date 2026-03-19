@@ -17,7 +17,7 @@ data class DiplomaticRelation(
     val lastContact: Long,
     val issues: String = "", // JSON array
     val agreements: String = "" // JSON array
-)
+}
 
 @Entity(tableName = "alliances")
 data class Alliance(
@@ -33,7 +33,7 @@ data class Alliance(
     val sharedTechnology: Boolean,
     val jointExercises: Boolean,
     val isActive: Boolean = true
-)
+}
 
 enum class AllianceType {
     MUTUAL_DEFENSE,
@@ -56,7 +56,7 @@ data class TradeBloc(
     val freeMovement: Boolean,
     val commonCurrency: Boolean,
     val isActive: Boolean = true
-)
+}
 
 enum class TradeBlocType {
     FREE_TRADE_AREA,
@@ -80,7 +80,7 @@ data class Diplomat(
     val effectiveness: Double, // 0-100
     val scandals: Int = 0,
     val isActive: Boolean = true
-)
+}
 
 enum class DiplomaticRank {
     AMBASSADOR,
@@ -91,7 +91,7 @@ enum class DiplomaticRank {
     THIRD_SECRETARY,
     ATTACHE,
     CULTURAL_ATTACHE // Spy cover
-)
+}
 
 @Entity(tableName = "embassy_projects")
 data class EmbassyProject(
@@ -106,7 +106,7 @@ data class EmbassyProject(
     val startDate: Long,
     val completionDate: Long?,
     val contractor: String?
-)
+}
 
 enum class EmbassyProjectType {
     CONSTRUCTION,
@@ -134,7 +134,7 @@ data class Spy(
     val isCompromised: Boolean = false,
     val lastContact: Long,
     val isActive: Boolean = true
-)
+}
 
 enum class SpyRank {
     ROOKIE,
@@ -166,7 +166,7 @@ data class Sanction(
     val domesticBacklash: Double, // 0-100
     val internationalSupport: Double, // 0-100
     val isActive: Boolean = true
-)
+}
 
 enum class SanctionType {
     TRADE_EMBARGO,
@@ -199,7 +199,7 @@ data class War(
     val economicCost: Double,
     val publicSupport: Double, // 0-100
     val internationalSupport: Double // 0-100
-)
+}
 
 enum class WarStatus {
     DECLARED,
@@ -229,4 +229,4 @@ data class WorkPermit(
     val isHighTalent: Boolean = false,
     val dependents: Int = 0,
     val conditions: String = "" // JSON array
-)
+}

@@ -27,7 +27,7 @@ data class Law(
     val publicSupport: Double = 50.0,
     val economicImpact: Double = 0.0,
     val socialImpact: Double = 0.0
-)
+}
 
 enum class LawType {
     TAX,
@@ -70,7 +70,7 @@ data class Bill(
     val votes: String = "", // JSON array of vote records
     val lobbySupport: Double = 0.0,
     val lobbyOpposition: Double = 0.0
-)
+}
 
 enum class BillStage {
     DRAFTING,
@@ -98,7 +98,7 @@ data class Committee(
     val currentBills: Int = 0,
     val hearingsScheduled: String = "", // JSON array
     val budget: Double = 0.0
-)
+}
 
 enum class CommitteeType {
     STANDING,
@@ -130,7 +130,7 @@ data class CourtCase(
     val damages: Double = 0.0,
     val isAppealed: Boolean = false,
     val appealDate: Long? = null
-)
+}
 
 enum class CaseType {
     CIVIL,
@@ -168,7 +168,7 @@ data class Judge(
     val rulingsCount: Int = 0,
     val approvalRating: Double = 50.0,
     val isActive: Boolean = true
-)
+}
 
 @Entity(tableName = "sentencing_guidelines")
 data class SentencingGuideline(
@@ -181,7 +181,7 @@ data class SentencingGuideline(
     val maxSentence: Int, // months
     val guidelinesType: GuidelinesType,
     val isActive: Boolean = true
-)
+}
 
 enum class GuidelinesType {
     MANDATORY,
@@ -200,4 +200,4 @@ data class LegalAid(
     val successRate: Double,
     val averageWaitTime: Int, // days
     val isActive: Boolean = true
-)
+}

@@ -32,7 +32,7 @@ data class Country(
     
     // Metadata
     val createdAt: Long = System.currentTimeMillis()
-)
+}
 
 @Entity(tableName = "player_countries")
 data class PlayerCountry(
@@ -66,7 +66,7 @@ data class PlayerCountry(
     val environmentalRating: Double = 50.0,
     
     val lastUpdated: Long = System.currentTimeMillis()
-)
+}
 
 @Entity(tableName = "resources")
 data class NationalResources(
@@ -95,4 +95,4 @@ data class NationalResources(
     val goldReserves: Double = 0.0,
     
     val lastUpdated: Long = System.currentTimeMillis()
-)
+}
