@@ -20,7 +20,7 @@ data class Ministry(
     val priorities: String = "", // JSON array
     val activeProjects: Int = 0,
     val isActive: Boolean = true
-}
+)
 
 enum class MinistryType {
     DEFENSE,
@@ -58,7 +58,7 @@ data class Appointee(
     val scandals: Int = 0,
     val isActive: Boolean = true,
     val isSenateConfirmed: Boolean = true
-}
+)
 
 @Entity(tableName = "government_departments")
 data class GovernmentDepartment(
@@ -73,7 +73,7 @@ data class GovernmentDepartment(
     val performance: Double, // 0-100
     val backlog: Int,
     val isActive: Boolean = true
-}
+)
 
 @Entity(tableName = "agency_heads")
 data class AgencyHead(
@@ -89,7 +89,7 @@ data class AgencyHead(
     val effectiveness: Double, // 0-100
     val controversies: Int = 0,
     val isActive: Boolean = true
-}
+)
 
 enum class AgencyType {
     INTELLIGENCE,
@@ -121,7 +121,7 @@ data class PurchaseOrder(
     val deliveryDate: Long?,
     val isUrgent: Boolean = false,
     val isSuspicious: Boolean = false
-}
+)
 
 enum class PurchaseOrderStatus {
     PENDING,
@@ -146,7 +146,7 @@ data class ExpenseReport(
     val status: ExpenseStatus,
     val isFlagged: Boolean = false,
     val flagReason: String? = null
-}
+)
 
 enum class ExpenseCategory {
     TRAVEL,
@@ -182,7 +182,7 @@ data class InterDepartmentDispute(
     val resolution: String? = null,
     val resolvedDate: Long? = null,
     val mediator: String? = null
-}
+)
 
 enum class DisputeType {
     BUDGET,
@@ -206,4 +206,4 @@ data class OutreachPlan(
     val metrics: String, // JSON
     val effectiveness: Double, // 0-100
     val isActive: Boolean = true
-}
+)

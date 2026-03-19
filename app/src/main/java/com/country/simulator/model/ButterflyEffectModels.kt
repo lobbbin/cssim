@@ -18,7 +18,7 @@ data class MacroDecision(
     val microTasksGenerated: Int = 0,
     val isCompleted: Boolean = false,
     val completedDate: Long? = null
-}
+)
 
 enum class MacroDecisionType {
     ELECTION,
@@ -70,7 +70,7 @@ data class MicroTask(
     // Effects
     val effects: String = "", // JSON
     val butterflyEffects: String = "" // JSON - cascading effects
-}
+)
 
 enum class MicroTaskType {
     APPROVE_PERMIT,
@@ -139,7 +139,7 @@ data class ButterflyEffect(
     val triggeredDate: Long?,
     val expiryDate: Long?,
     val chainLevel: Int = 0 // how deep in the cascade
-}
+)
 
 enum class EffectType {
     POSITIVE,
@@ -165,7 +165,7 @@ data class TaskChain(
     val completionDate: Long?,
     val successCriteria: String = "", // JSON
     val failureConsequences: String = "" // JSON
-}
+)
 
 enum class ChainType {
     CAMPAIGN,
@@ -194,7 +194,7 @@ data class ProceduralTable(
     val generationSeed: Long,
     val lastRegenerated: Long,
     val isActive: Boolean = true
-}
+)
 
 enum class TableType {
     NAMES,
@@ -226,7 +226,7 @@ data class GameEvent(
     val expiryDate: Long?,
     val isResolved: Boolean = false,
     val resolvedDate: Long?
-}
+)
 
 enum class GameEventType {
     CRISIS,
@@ -268,7 +268,7 @@ data class Notification(
     val readDate: Long?,
     val actionRequired: Boolean = false,
     val actionUrl: String? = null
-}
+)
 
 enum class NotificationType {
     INFO,

@@ -48,7 +48,7 @@ data class NPC(
     val isActive: Boolean = true,
     val isImportant: Boolean = false, // Key NPC
     val lastUpdated: Long = System.currentTimeMillis()
-}
+)
 
 enum class Gender {
     MALE,
@@ -94,7 +94,7 @@ data class NPCMemory(
     val relatedEntity: String?, // law, policy, person, etc.
     val isForgotten: Boolean = false,
     val forgottenDate: Long?
-}
+)
 
 enum class MemoryType {
     POSITIVE_EXPERIENCE,
@@ -124,7 +124,7 @@ data class NPCRelationship(
     val favorsOwed: String = "", // JSON
     val conflicts: String = "", // JSON array
     val isActive: Boolean = true
-}
+)
 
 enum class RelationshipType {
     FAMILY,
@@ -157,7 +157,7 @@ data class Lobbyist(
     val successRate: Double, // 0-100
     val scandals: Int = 0,
     val isActive: Boolean = true
-}
+)
 
 @Entity(tableName = "activists")
 data class Activist(
@@ -173,7 +173,7 @@ data class Activist(
     val arrests: Int = 0,
     val mediaAttention: Int, // 1-10
     val isActive: Boolean = true
-}
+)
 
 @Entity(tableName = "witnesses")
 data class Witness(
@@ -188,7 +188,7 @@ data class Witness(
     val isProtected: Boolean = false,
     val protectionProgram: Boolean = false,
     val relatedCaseId: Long? = null
-}
+)
 
 @Entity(tableName = "jurors")
 data class Juror(
@@ -203,7 +203,7 @@ data class Juror(
     val selectionStatus: JurorStatus,
     val caseId: Long? = null,
     val notes: String? = null
-}
+)
 
 enum class JurorStatus {
     POOL,
@@ -227,7 +227,7 @@ data class Donor(
     val expectations: String = "", // JSON array
     val isControversial: Boolean = false,
     val isActive: Boolean = true
-}
+)
 
 enum class DonorType {
     INDIVIDUAL,
@@ -254,7 +254,7 @@ data class Contractor(
     val activeContracts: Int = 0,
     val totalValue: Double = 0.0,
     val isActive: Boolean = true
-}
+)
 
 @Entity(tableName = "foreign_leaders")
 data class ForeignLeader(
@@ -271,4 +271,4 @@ data class ForeignLeader(
     val disputes: String = "", // JSON array
     val stateVisits: String = "", // JSON array
     val isActive: Boolean = true
-}
+)

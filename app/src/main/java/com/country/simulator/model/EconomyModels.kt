@@ -32,7 +32,7 @@ data class NationalBudget(
     
     val isApproved: Boolean = false,
     val approvedDate: Long? = null
-}
+)
 
 @Entity(tableName = "tax_brackets")
 data class TaxBracket(
@@ -44,7 +44,7 @@ data class TaxBracket(
     val maxIncome: Double?,
     val taxRate: Double, // percentage
     val isActive: Boolean = true
-}
+)
 
 enum class TaxType {
     INCOME,
@@ -70,7 +70,7 @@ data class TradeDeal(
     val quotas: String, // JSON
     val specialProvisions: String, // JSON
     val economicImpact: Double = 0.0
-}
+)
 
 enum class TradeDealType {
     FREE_TRADE,
@@ -106,7 +106,7 @@ data class Business(
     val licenseExpiry: Long?,
     val isUnderAudit: Boolean = false,
     val complianceRating: Double = 100.0
-}
+)
 
 enum class BusinessType {
     SOLE_PROPRIETORSHIP,
@@ -139,7 +139,7 @@ data class OilOperation(
     val workerCount: Int,
     val safetyRating: Double, // 0-100
     val isActive: Boolean = true
-}
+)
 
 enum class OilOperationType {
     DRILLING,
@@ -163,7 +163,7 @@ data class EconomicReport(
     val businessConfidence: Double,
     val currencyStrength: Double,
     val summary: String
-}
+)
 
 enum class EconomicReportType {
     MONTHLY,

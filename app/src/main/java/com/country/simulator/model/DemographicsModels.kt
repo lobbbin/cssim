@@ -23,7 +23,7 @@ data class Demographic(
     val ruralPopulation: Long,
     val populationDensity: Double,
     val lastUpdated: Long = System.currentTimeMillis()
-}
+)
 
 @Entity(tableName = "immigration_cases")
 data class ImmigrationCase(
@@ -44,7 +44,7 @@ data class ImmigrationCase(
     val isRefugee: Boolean = false,
     val isHighTalent: Boolean = false,
     val integrationProgram: Boolean = false
-}
+)
 
 enum class ImmigrationType {
     WORK,
@@ -86,7 +86,7 @@ data class VisaQuota(
     val remainingQuota: Int,
     val year: Int,
     val isActive: Boolean = true
-}
+)
 
 @Entity(tableName = "health_programs")
 data class HealthProgram(
@@ -103,7 +103,7 @@ data class HealthProgram(
     val coverage: Int, // number of people
     val effectiveness: Double, // 0-100
     val isActive: Boolean = true
-}
+)
 
 enum class HealthProgramType {
     VACCINATION,
@@ -129,7 +129,7 @@ data class MedicineStockpile(
     val criticalLevel: Int,
     val isCritical: Boolean = false,
     val lastRestocked: Long
-}
+)
 
 @Entity(tableName = "disease_outbreaks")
 data class DiseaseOutbreak(
@@ -150,7 +150,7 @@ data class DiseaseOutbreak(
     val quarantineAreas: String = "", // JSON array
     val vaccineAvailable: Boolean = false,
     val status: OutbreakStatus
-}
+)
 
 enum class DiseaseType {
     VIRAL,
@@ -184,7 +184,7 @@ data class SocialGroup(
     val leaders: String = "", // JSON array
     val demands: String = "", // JSON array
     val isActive: Boolean = true
-}
+)
 
 enum class GroupType {
     ETHNIC,
@@ -211,7 +211,7 @@ data class WelfarePayment(
     val status: PaymentStatus,
     val lastPaymentDate: Long?,
     val totalPaid: Double = 0.0
-}
+)
 
 enum class WelfareType {
     UNEMPLOYMENT,
@@ -253,7 +253,7 @@ data class CommunityProject(
     val completionDate: Long?,
     val beneficiaries: Int,
     val communityLeaders: String = "" // JSON array
-}
+)
 
 enum class CommunityProjectType {
     RECREATION_CENTER,
@@ -280,4 +280,4 @@ data class JobTrainingProgram(
     val employmentRate: Double, // 0-100
     val budget: Double,
     val isActive: Boolean = true
-}
+)
