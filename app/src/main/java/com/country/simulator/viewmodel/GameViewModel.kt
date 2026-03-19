@@ -377,7 +377,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
                 effectDescription = "Delayed effect from: ${event.title}",
                 effectMagnitude = (kotlin.random.Random.nextDouble() - 0.5) * 15,
                 delayDays = 7 + kotlin.random.Random.nextInt(21),
-                chainLevel = 0
+                chainLevel = 0,
+                triggeredDate = null,
+                expiryDate = null
             )
             effects.add(effect)
         }
@@ -431,7 +433,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
                     priority = when (event.priority) {
                         in 8..10 -> Priority.URGENT
                         in 5..7 -> Priority.HIGH
-                        else -> Priority.MEDIUM
+                        else -> Priority.NORMAL
                     },
                     createdDate = System.currentTimeMillis(),
                     readDate = null,

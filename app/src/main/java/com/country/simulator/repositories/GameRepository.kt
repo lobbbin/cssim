@@ -51,6 +51,9 @@ class GameRepository(private val database: GameDatabase) {
     // Budget
     fun getCurrentBudget(countryId: Long): Flow<NationalBudget?> = budgetDao.getCurrentBudget(countryId)
     
+    // Tax Brackets
+    fun getTaxBrackets(countryId: Long): Flow<List<TaxBracket>> = budgetDao.getTaxBrackets(countryId)
+    
     // Laws
     fun getLaws(countryId: Long): Flow<List<Law>> = lawDao.getLawsByCountry(countryId)
     suspend fun getLawById(id: Long): Law? = lawDao.getLawById(id)
