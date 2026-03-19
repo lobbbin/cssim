@@ -11,6 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.country.simulator.model.*
+import com.country.simulator.ui.theme.success
+import com.country.simulator.ui.theme.warning
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

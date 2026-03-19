@@ -1,6 +1,8 @@
 package com.country.simulator.ui.screens
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -185,7 +187,7 @@ fun BusinessLicensesScreen(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier.padding(8.dp)
                     ) {
-                        Icon(Icons.Default.Audit, contentDescription = null)
+                        Icon(Icons.Default.FactCheck, contentDescription = null)
                         Text("Random Audit", style = MaterialTheme.typography.labelSmall)
                     }
                 }
