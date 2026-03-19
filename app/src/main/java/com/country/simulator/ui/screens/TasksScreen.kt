@@ -370,6 +370,7 @@ fun EmptyTasksState() {
     }
 }
 
+@Composable
 fun getTaskCardColor(priority: Priority, status: TaskStatus): Color {
     return when (status) {
         TaskStatus.COMPLETED -> MaterialTheme.colorScheme.surfaceVariant
@@ -387,8 +388,8 @@ fun formatDueDate(dueDate: Long): String {
     val days = (dueDate - System.currentTimeMillis()) / (24 * 60 * 60 * 1000)
     return when {
         days < 0 -> "Overdue"
-        days == 0 -> "Due today"
-        days == 1 -> "Due tomorrow"
+        days == 0L -> "Due today"
+        days == 1L -> "Due tomorrow"
         days <= 7 -> "Due in $days days"
         else -> "Due in ${days / 7} weeks"
     }
