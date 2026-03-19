@@ -123,10 +123,10 @@ fun GovernmentStatusCard(playerCountry: PlayerCountry?) {
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text("Approval Rating")
-                    Text("${(playerCountry?.approvalRating ?: 0f).toInt()}%")
+                    Text("${(playerCountry?.approvalRating ?: 0.0).toInt()}%")
                 }
                 LinearProgressIndicator(
-                    progress = (playerCountry?.approvalRating ?: 0f) / 100f,
+                    progress = ((playerCountry?.approvalRating ?: 0.0) / 100.0).toFloat(),
                     modifier = Modifier.fillMaxWidth()
                 )
             }
@@ -138,10 +138,10 @@ fun GovernmentStatusCard(playerCountry: PlayerCountry?) {
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text("Stability")
-                    Text("${(playerCountry?.stability ?: 0f).toInt()}%")
+                    Text("${(playerCountry?.stability ?: 0.0).toInt()}%")
                 }
                 LinearProgressIndicator(
-                    progress = (playerCountry?.stability ?: 0f) / 100f,
+                    progress = ((playerCountry?.stability ?: 0.0) / 100.0).toFloat(),
                     modifier = Modifier.fillMaxWidth(),
                     color = MaterialTheme.colorScheme.tertiary
                 )
@@ -453,7 +453,7 @@ fun CampaignActionsCard() {
 }
 
 @Composable
-fun ActionButton(
+fun RowScope.ActionButton(
     icon: androidx.compose.ui.graphics.vector.ImageVector,
     label: String,
     onClick: () -> Unit
@@ -481,5 +481,14 @@ fun formatCompactNumber(number: Int): String {
         number >= 1_000_000 -> "${number / 1_000_000}M"
         number >= 1_000 -> "${number / 1_000}K"
         else -> number.toString()
+    }
+}
+
+fun formatCurrency(value: Double): String {
+    return when {
+        value >= 1_000_000_000 -> String.format("$%.1fB", value / 1_000_000_000)
+        value >= 1_000_000 -> String.format("$%.1fM", value / 1_000_000)
+        value >= 1_000 -> String.format("$%.1fK", value / 1_000)
+        else -> String.format("$%.0f", value)
     }
 }
