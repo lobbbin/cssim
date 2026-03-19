@@ -93,7 +93,7 @@ data class StadiumDesign(
     val capacity: Int,
     val designType: String,
     val architect: String,
-    estimatedCost: Double,
+    val estimatedCost: Double,
     val features: String = "", // JSON array
     val environmentalRating: Double,
     val publicSupport: Double, // 0-100

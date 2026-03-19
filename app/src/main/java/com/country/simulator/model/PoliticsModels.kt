@@ -2,6 +2,7 @@ package com.country.simulator.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.Ignore
 
 @Entity(tableName = "elections")
 data class Election(
@@ -11,6 +12,7 @@ data class Election(
     val scheduledDate: Long,
     val completedDate: Long? = null,
     val isActive: Boolean = false,
+    @Ignore
     val result: ElectionResult? = null
 )
 
