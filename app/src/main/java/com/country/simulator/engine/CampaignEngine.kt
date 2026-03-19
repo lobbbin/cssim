@@ -237,7 +237,7 @@ class CampaignEngine(private val repository: GameRepository) {
                 description = "Damaging information revealed about $target",
                 severity = scandalSeverity,
                 type = ScandalType.entries.random(),
-                involvedPersons = "["$target"]",
+                involvedPersons = "[\"$target\"]",
                 dateExposed = System.currentTimeMillis(),
                 impactOnApproval = -scandalSeverity.toDouble()
             )
