@@ -11,10 +11,11 @@ data class Election(
     val electionType: ElectionType,
     val scheduledDate: Long,
     val completedDate: Long? = null,
-    val isActive: Boolean = false,
+    val isActive: Boolean = false
+) {
     @Ignore
-    val result: ElectionResult? = null
-)
+    var result: ElectionResult? = null
+}
 
 enum class ElectionType {
     PRESIDENTIAL,
