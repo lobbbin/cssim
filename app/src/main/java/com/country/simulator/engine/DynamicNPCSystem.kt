@@ -195,8 +195,12 @@ class DynamicNPCSystem(private val repository: GameRepository) {
                     title = "Meet with ${activist.organization}",
                     description = "${activist.name} demands meeting about ${activist.cause}",
                     category = TaskCategory.SOCIAL,
-                    priority = Priority.MEDIUM,
+                    priority = Priority.NORMAL,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
                 )
@@ -251,6 +255,10 @@ class DynamicNPCSystem(private val repository: GameRepository) {
                     category = TaskCategory.ECONOMY,
                     priority = Priority.LOW,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 14 * 24 * 60 * 60 * 1000
                 )
@@ -299,6 +307,10 @@ class DynamicNPCSystem(private val repository: GameRepository) {
                     category = TaskCategory.POLITICS,
                     priority = Priority.HIGH,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000
                 )
@@ -313,8 +325,12 @@ class DynamicNPCSystem(private val repository: GameRepository) {
                     title = "Business Lobby Meeting",
                     description = "${npc.name} requests meeting on industry regulations",
                     category = TaskCategory.ECONOMY,
-                    priority = Priority.MEDIUM,
+                    priority = Priority.NORMAL,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
                 )

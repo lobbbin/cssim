@@ -49,6 +49,10 @@ class CampaignEngine(private val repository: GameRepository) {
             priority = Priority.LOW,
             relatedMacroId = campaignId,
             status = TaskStatus.PENDING,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
+            completedDate = null,
             createdDate = System.currentTimeMillis(),
             dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
         )
@@ -233,7 +237,7 @@ class CampaignEngine(private val repository: GameRepository) {
                 description = "Damaging information revealed about $target",
                 severity = scandalSeverity,
                 type = ScandalType.entries.random(),
-                involvedPersons = listOf(target),
+                involvedPersons = "["$target"]",
                 dateExposed = System.currentTimeMillis(),
                 impactOnApproval = -scandalSeverity.toDouble()
             )
@@ -298,6 +302,10 @@ class CampaignEngine(private val repository: GameRepository) {
                 priority = Priority.URGENT,
                 relatedMacroId = scandalId,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 12 * 60 * 60 * 1000
             )
@@ -346,9 +354,13 @@ class CampaignEngine(private val repository: GameRepository) {
             title = "Review Latest Poll",
             description = "Analyze new polling data and adjust strategy",
             category = TaskCategory.POLITICS,
-            priority = Priority.MEDIUM,
+            priority = Priority.NORMAL,
             relatedMacroId = campaignId,
             status = TaskStatus.PENDING,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
+            completedDate = null,
             createdDate = System.currentTimeMillis(),
             dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
         )
@@ -416,7 +428,9 @@ class CampaignEngine(private val repository: GameRepository) {
                     effectDescription = "Industrial area rally boosts local business confidence",
                     effectMagnitude = 5.0,
                     delayDays = 30,
-                    chainLevel = 1
+                    triggeredDate = null,
+                expiryDate = null,
+                chainLevel = 1
                 ))
             }
             RallyArea.RURAL -> {
@@ -430,7 +444,9 @@ class CampaignEngine(private val repository: GameRepository) {
                     effectDescription = "Rural rally affects agricultural policy expectations",
                     effectMagnitude = 3.0,
                     delayDays = 60,
-                    chainLevel = 1
+                    triggeredDate = null,
+                expiryDate = null,
+                chainLevel = 1
                 ))
             }
             RallyArea.UNIVERSITY -> {
@@ -444,7 +460,9 @@ class CampaignEngine(private val repository: GameRepository) {
                     effectDescription = "University rally influences youth vote",
                     effectMagnitude = 4.0,
                     delayDays = 90,
-                    chainLevel = 1
+                    triggeredDate = null,
+                expiryDate = null,
+                chainLevel = 1
                 ))
             }
             else -> {}

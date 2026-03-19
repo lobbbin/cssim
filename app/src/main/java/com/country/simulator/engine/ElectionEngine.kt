@@ -342,7 +342,8 @@ enum class ScandalResponseStrategy {
     APOLOGIZE,
     ATTACK,
     IGNORE,
-    INVESTIGATE
+    INVESTIGATE,
+    DISTRACT
 }
 
 sealed class ElectionOutcome {

@@ -94,6 +94,8 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                 effectDescription = "Budget cuts cause protests",
                 effectMagnitude = -5.0,
                 delayDays = 14,
+                triggeredDate = null,
+                expiryDate = null,
                 chainLevel = 1
             ))
             
@@ -107,6 +109,8 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                 effectDescription = "Ministry efficiency drops",
                 effectMagnitude = -10.0,
                 delayDays = 30,
+                triggeredDate = null,
+                expiryDate = null,
                 chainLevel = 1
             ))
         }
@@ -121,8 +125,12 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                 title = "Handle Budget Cut Backlash",
                 description = "$ministry faces backlash from budget cuts",
                 category = TaskCategory.POLITICS,
-                priority = Priority.MEDIUM,
+                priority = Priority.NORMAL,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
             )
@@ -294,6 +302,10 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                 category = TaskCategory.ECONOMY,
                 priority = Priority.LOW,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 90 * 24 * 60 * 60 * 1000
             )
@@ -355,6 +367,8 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                 effectDescription = "Diplomatic tension affects trade",
                 effectMagnitude = tradeImpact,
                 delayDays = 30,
+                triggeredDate = null,
+                expiryDate = null,
                 chainLevel = 1
             ))
         }
@@ -629,6 +643,10 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                     category = TaskCategory.DEFENSE,
                     priority = Priority.URGENT,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 6 * 60 * 60 * 1000
                 ),
@@ -640,6 +658,10 @@ class InteractiveDecisionEngine(private val repository: GameRepository) {
                     category = TaskCategory.DIPLOMACY,
                     priority = Priority.HIGH,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 12 * 60 * 60 * 1000
                 )

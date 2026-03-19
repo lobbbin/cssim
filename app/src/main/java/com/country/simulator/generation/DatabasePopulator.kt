@@ -658,11 +658,11 @@ class DatabasePopulator(private val repository: GameRepository) {
             MicroTaskData(MicroTaskType.ATTEND_MEETING, "First Cabinet Meeting", "Meet with cabinet members", TaskCategory.POLITICS, Priority.HIGH),
             MicroTaskData(MicroTaskType.GIVE_SPEECH, "Inaugural Address", "Address the nation", TaskCategory.POLITICS, Priority.HIGH),
             MicroTaskData(MicroTaskType.REVIEW_BUDGET, "Review National Budget", "Examine treasury reports", TaskCategory.ECONOMY, Priority.HIGH),
-            MicroTaskData(MicroTaskType.MAKE_CALL, "Call Allied Leaders", "Establish diplomatic contact", TaskCategory.DIPLOMACY, Priority.MEDIUM),
-            MicroTaskData(MicroTaskType.SIGN_DOCUMENT, "Sign Executive Orders", "Review pending orders", TaskCategory.LAW, Priority.MEDIUM),
+            MicroTaskData(MicroTaskType.MAKE_CALL, "Call Allied Leaders", "Establish diplomatic contact", TaskCategory.DIPLOMACY, Priority.NORMAL),
+            MicroTaskData(MicroTaskType.SIGN_DOCUMENT, "Sign Executive Orders", "Review pending orders", TaskCategory.LAW, Priority.NORMAL),
             MicroTaskData(MicroTaskType.APPROVE_HIRE, "Appoint Advisors", "Select key staff", TaskCategory.POLITICS, Priority.HIGH),
-            MicroTaskData(MicroTaskType.REVIEW_BUDGET, "Defense Budget Review", "Analyze military spending", TaskCategory.DEFENSE, Priority.MEDIUM),
-            MicroTaskData(MicroTaskType.ALLOCATE_FUNDS, "Emergency Fund Allocation", "Reserve contingency funds", TaskCategory.ECONOMY, Priority.MEDIUM)
+            MicroTaskData(MicroTaskType.REVIEW_BUDGET, "Defense Budget Review", "Analyze military spending", TaskCategory.DEFENSE, Priority.NORMAL),
+            MicroTaskData(MicroTaskType.ALLOCATE_FUNDS, "Emergency Fund Allocation", "Reserve contingency funds", TaskCategory.ECONOMY, Priority.NORMAL)
         )
         
         tasks.forEach { data ->
@@ -674,6 +674,10 @@ class DatabasePopulator(private val repository: GameRepository) {
                 category = data.category,
                 priority = data.priority,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + (1..7).random() * 24 * 60 * 60 * 1000
             )

@@ -170,6 +170,10 @@ class GameStateManager(private val repository: GameRepository) {
                 category = TaskCategory.POLITICS,
                 priority = Priority.HIGH,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000,
                 effects = """{"approvalRating": 2}"""
@@ -182,6 +186,10 @@ class GameStateManager(private val repository: GameRepository) {
                 category = TaskCategory.POLITICS,
                 priority = Priority.HIGH,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000,
                 effects = """{"approvalRating": 5, "happiness": 3}"""
@@ -192,8 +200,12 @@ class GameStateManager(private val repository: GameRepository) {
                 title = "Review National Budget",
                 description = "Examine the current state of the national budget",
                 category = TaskCategory.ECONOMY,
-                priority = Priority.MEDIUM,
+                priority = Priority.NORMAL,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
             ),
@@ -203,8 +215,12 @@ class GameStateManager(private val repository: GameRepository) {
                 title = "Call Allied Leaders",
                 description = "Establish diplomatic contact with key allies",
                 category = TaskCategory.DIPLOMACY,
-                priority = Priority.MEDIUM,
+                priority = Priority.NORMAL,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000
             )
@@ -250,6 +266,10 @@ class GameStateManager(private val repository: GameRepository) {
         val updatedTask = task.copy(
             selectedOption = selectedOption,
             status = TaskStatus.COMPLETED,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
+            completedDate = null,
             completedDate = System.currentTimeMillis()
         )
         
@@ -326,6 +346,8 @@ class GameStateManager(private val repository: GameRepository) {
                 effectDescription = "Delayed effect from: ${task.title}",
                 effectMagnitude = (random.nextDouble() - 0.5) * 10,
                 delayDays = 7 + random.nextInt(21),
+                triggeredDate = null,
+                expiryDate = null,
                 chainLevel = 0
             )
             effects.add(effect)

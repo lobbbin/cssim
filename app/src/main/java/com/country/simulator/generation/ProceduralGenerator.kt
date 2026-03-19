@@ -331,6 +331,10 @@ object ProceduralGenerator {
             category = TaskCategory.entries.random(random()),
             priority = Priority.entries.random(random()),
             status = TaskStatus.PENDING,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
+            completedDate = null,
             createdDate = System.currentTimeMillis(),
             dueDate = System.currentTimeMillis() + (1..7).random(random()) * 24 * 60 * 60 * 1000
         )

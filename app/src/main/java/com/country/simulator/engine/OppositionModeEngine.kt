@@ -49,6 +49,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
             priority = Priority.URGENT,
             relatedMacroId = billId,
             status = TaskStatus.PENDING,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
+            completedDate = null,
             createdDate = System.currentTimeMillis(),
             dueDate = System.currentTimeMillis() + 12 * 60 * 60 * 1000
         )
@@ -65,7 +69,9 @@ class OppositionModeEngine(private val repository: GameRepository) {
             effectDescription = "Filibuster affects public opinion on the issue",
             effectMagnitude = (random.nextDouble() - 0.5) * 10,
             delayDays = 7,
-            chainLevel = 1
+            triggeredDate = null,
+                expiryDate = null,
+                chainLevel = 1
         )
         repository.insertButterflyEffect(butterflyEffect)
         
@@ -98,6 +104,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
                     priority = Priority.HIGH,
                     relatedMacroId = billId,
                     status = TaskStatus.PENDING,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
+                    selectedOption = null,
+                    completedDate = null,
                     createdDate = System.currentTimeMillis(),
                     dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
                 )
@@ -176,8 +186,12 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 title = "Follow Up with Undecided MPs",
                 description = "Contact MPs who haven't committed on: $issue",
                 category = TaskCategory.POLITICS,
-                priority = Priority.MEDIUM,
+                priority = Priority.NORMAL,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 48 * 60 * 60 * 1000
             )
@@ -225,6 +239,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 category = TaskCategory.POLITICS,
                 priority = Priority.HIGH,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
             )
@@ -270,6 +288,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
             category = TaskCategory.POLITICS,
             priority = Priority.LOW,
             status = TaskStatus.PENDING,
+            relatedEntityId = null,
+            relatedEntityType = null,
+            selectedOption = null,
+            completedDate = null,
             createdDate = System.currentTimeMillis(),
             dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
         )
@@ -309,9 +331,13 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 title = "Committee Hearing Preparation",
                 description = "Prepare for committee hearing on $title",
                 category = TaskCategory.POLITICS,
-                priority = Priority.MEDIUM,
+                priority = Priority.NORMAL,
                 relatedMacroId = billId,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000
             ),
@@ -321,9 +347,13 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 title = "Lobby Co-sponsors",
                 description = "Contact potential co-sponsors for support",
                 category = TaskCategory.POLITICS,
-                priority = Priority.MEDIUM,
+                priority = Priority.NORMAL,
                 relatedMacroId = billId,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000
             )
@@ -366,6 +396,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 category = TaskCategory.POLITICS,
                 priority = Priority.HIGH,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 48 * 60 * 60 * 1000
             )
@@ -401,6 +435,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 priority = Priority.URGENT,
                 relatedMacroId = electionId,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 24 * 60 * 60 * 1000
             ),
@@ -413,6 +451,10 @@ class OppositionModeEngine(private val repository: GameRepository) {
                 priority = Priority.HIGH,
                 relatedMacroId = electionId,
                 status = TaskStatus.PENDING,
+                relatedEntityId = null,
+                relatedEntityType = null,
+                selectedOption = null,
+                completedDate = null,
                 createdDate = System.currentTimeMillis(),
                 dueDate = System.currentTimeMillis() + 3 * 24 * 60 * 60 * 1000
             )
