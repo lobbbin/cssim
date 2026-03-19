@@ -116,12 +116,12 @@ fun CountryHeader(playerCountry: PlayerCountry?) {
             
             // Approval Rating
             LinearProgressIndicator(
-                progress = (playerCountry?.approvalRating ?: 0f) / 100f,
+                progress = (playerCountry?.approvalRating ?: 0.0) / 100.0,
                 modifier = Modifier.fillMaxWidth(),
                 color = MaterialTheme.colorScheme.primary
             )
             Text(
-                text = "Approval: ${(playerCountry?.approvalRating ?: 0f).toInt()}%",
+                text = "Approval: ${(playerCountry?.approvalRating ?: 0.0).toInt()}%",
                 style = MaterialTheme.typography.bodySmall
             )
         }
@@ -146,17 +146,17 @@ fun StatsOverview(playerCountry: PlayerCountry?) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                StatItem("Stability", "${(playerCountry?.stability ?: 0f).toInt()}%")
-                StatItem("Growth", "${(playerCountry?.growthRate ?: 0f).toString().take(4)}%")
-                StatItem("Happiness", "${(playerCountry?.happinessIndex ?: 0f).toInt()}%")
+                StatItem("Stability", "${(playerCountry?.stability ?: 0.0).toInt()}%")
+                StatItem("Growth", "${(playerCountry?.growthRate ?: 0.0).toString().take(4)}%")
+                StatItem("Happiness", "${(playerCountry?.happinessIndex ?: 0.0).toInt()}%")
             }
             
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                StatItem("Inflation", "${(playerCountry?.inflationRate ?: 0f).toString().take(4)}%")
-                StatItem("Unemployment", "${(playerCountry?.unemploymentRate ?: 0f).toString().take(4)}%")
+                StatItem("Inflation", "${(playerCountry?.inflationRate ?: 0.0).toString().take(4)}%")
+                StatItem("Unemployment", "${(playerCountry?.unemploymentRate ?: 0.0).toString().take(4)}%")
                 StatItem("Debt", formatNumber(playerCountry?.let { it.treasuryBalance }) ?: "N/A")
             }
         }
@@ -225,7 +225,7 @@ fun QuickActions(onNavigateToScreen: (Screen) -> Unit) {
 }
 
 @Composable
-fun QuickActionButton(
+fun RowScope.QuickActionButton(
     icon: ImageVector,
     label: String,
     onClick: () -> Unit

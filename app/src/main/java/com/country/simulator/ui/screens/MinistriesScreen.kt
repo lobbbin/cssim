@@ -68,6 +68,7 @@ fun MinistriesScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppointeeCard(
     appointee: Appointee,
@@ -151,6 +152,7 @@ fun AppointeeCard(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MinistryCard(
     ministry: Ministry,

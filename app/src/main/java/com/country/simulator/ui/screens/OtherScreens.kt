@@ -82,6 +82,7 @@ fun InfrastructureScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InfrastructureCategoryCard(
     icon: androidx.compose.ui.graphics.vector.ImageVector,
@@ -453,6 +454,7 @@ fun SportsScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SportsCategoryCard(
     icon: androidx.compose.ui.graphics.vector.ImageVector,

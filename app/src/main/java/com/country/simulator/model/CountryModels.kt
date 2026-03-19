@@ -53,6 +53,7 @@ data class PlayerCountry(
     // Economic indicators
     val inflationRate: Double = 2.0,
     val unemploymentRate: Double = 5.0,
+    val treasuryBalance: Double = 1000000000.0,
     val growthRate: Double = 2.5,
     
     // Social indicators
