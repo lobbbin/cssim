@@ -426,12 +426,15 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
                     },
                     title = event.title,
                     message = event.description,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
                     priority = when (event.priority) {
                         in 8..10 -> Priority.URGENT
                         in 5..7 -> Priority.HIGH
                         else -> Priority.MEDIUM
                     },
                     createdDate = System.currentTimeMillis(),
+                    readDate = null,
                     actionRequired = true
                 )
             )

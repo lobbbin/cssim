@@ -349,6 +349,13 @@ class GameStateManager(private val repository: GameRepository) {
         
         repository.updatePlayerCountry(updated)
     }
+
+    /**
+     * Process pending butterfly effects
+     */
+    suspend fun processButterflyEffects(countryId: Long) {
+        butterflyEngine.processButterflyEffects(countryId)
+    }
     
     /**
      * Generate leader name

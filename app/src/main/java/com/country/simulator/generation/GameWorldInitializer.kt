@@ -395,8 +395,11 @@ class GameWorldInitializer(private val repository: GameRepository) {
                     notificationType = data.type,
                     title = data.title,
                     message = data.message,
+                    relatedEntityId = null,
+                    relatedEntityType = null,
                     priority = Priority.MEDIUM,
                     createdDate = System.currentTimeMillis(),
+                    readDate = null,
                     actionRequired = data.type == NotificationType.TASK
                 )
             )
